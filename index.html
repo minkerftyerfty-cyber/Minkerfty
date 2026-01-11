@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة ماريو - Minkerfty Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- شاشة التسجيل -->
+    <div id="loginScreen" class="screen active">
+        <div class="loginContainer">
+            <div class="loginBox">
+                <h1>🎮 لعبة ماريو</h1>
+                <p>رحباً بك في اللعبة!</p>
+                <form id="loginForm">
+                    <div class="formGroup">
+                        <label for="email">البريد الإلكتروني:</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            placeholder="أدخل بريدك الإلكتروني"
+                            required
+                        >
+                        <span id="emailError" class="error"></span>
+                    </div>
+                    <div class="formGroup">
+                        <label for="name">اسمك:</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            placeholder="أدخل اسمك"
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="submitBtn">ابدأ اللعبة</button>
+                </form>
+                <p class="info">✓ بريد إلكتروني صحيح يساراً ولا</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- شاشة اللعبة -->
+    <div id="gameContainer" class="screen">
+        <canvas id="gameCanvas" width="1000" height="600"></canvas>
+        <div id="hud">
+            <div id="playerInfo">👤 <span id="playerName"></span></div>
+            <div id="score">النقاط: <span>0</span></div>
+            <div id="lives">الأرواح: <span>3</span></div>
+            <div id="level">المستوى: <span>1</span></div>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <div class="gameOverContent">
+                <h1>انتهت اللعبة!</h1>
+                <p id="finalScore"></p>
+                <p id="playerEmail"></p>
+                <button onclick="logout()">تسجيل خروج</button>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
